@@ -1,118 +1,142 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Mohamed Hazem</title>
+<title>Mohamed Hazem</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: Arial, Tahoma, sans-serif;
-      background: linear-gradient(135deg, #111111, #292929);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Tahoma, sans-serif;
+  background:
+    radial-gradient(circle at top, #333 0%, #111 55%, #080808 100%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-    .card {
-      width: 100%;
-      max-width: 420px;
-      padding: 30px 22px;
-      text-align: center;
-      border-radius: 28px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    }
+.card {
+  width: 100%;
+  max-width: 430px;
+  padding: 30px 22px;
+  text-align: center;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.6);
+  backdrop-filter: blur(15px);
+}
 
-    .avatar {
-      width: 110px;
-      height: 110px;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      background: #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 34px;
-      font-weight: bold;
-      border: 3px solid rgba(255, 255, 255, 0.3);
-    }
+.profile {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 4px solid rgba(255,255,255,0.85);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
 
-    h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
-    }
+h1 {
+  margin: 18px 0 5px;
+  font-size: 30px;
+}
 
-    .subtitle {
-      color: #aaa;
-      margin-bottom: 25px;
-    }
+.subtitle {
+  color: #aaa;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
 
-    .button {
-      display: block;
-      text-decoration: none;
-      color: white;
-      padding: 15px;
-      margin: 12px 0;
-      border-radius: 15px;
-      background: rgba(255, 255, 255, 0.10);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      font-size: 17px;
-      font-weight: bold;
-    }
+.button {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  padding: 16px;
+  margin: 12px 0;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.13);
+  font-size: 17px;
+  font-weight: bold;
+  transition: 0.2s;
+}
 
-    .phone {
-      margin-top: 20px;
-      color: #aaa;
-      direction: ltr;
-    }
+.button:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-2px);
+}
 
-    .footer {
-      margin-top: 20px;
-      color: #666;
-      font-size: 12px;
-    }
-  </style>
+.save {
+  background: rgba(255,255,255,0.18);
+}
+
+.phone {
+  margin-top: 22px;
+  color: #aaa;
+  direction: ltr;
+  font-size: 15px;
+}
+
+.footer {
+  margin-top: 22px;
+  color: #666;
+  font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
+<div class="card">
 
-    <div class="avatar">
-      MH
-    </div>
+  <img src="profile.jpg" class="profile" alt="Mohamed Hazem">
 
-    <h1>Mohamed Hazem</h1>
+  <h1>Mohamed Hazem</h1>
 
-    <div class="subtitle">
-      Digital Contact Card
-    </div>
+  <div class="subtitle">
+    Digital Contact Card
+  </div>
 
-    <a class="button" href="tel:+201146007168">
-      📞 اتصال
-    </a>
+  <a class="button save" href="contact.vcf">
+    📱 حفظ رقمي
+  </a>
 
-    <a class="button" href="https://wa.me/201146007168" target="_blank">
-      💬 WhatsApp
-    </a>
+  <a class="button" href="tel:+201146007168">
+    📞 اتصال
+  </a>
 
-    <a class="button" href="https://www.facebook.com/share/1DNmQNRXWQ/" target="_blank">
-      📘 Facebook
-    </a>
+  <a class="button" href="https://wa.me/201146007168" target="_blank">
+    💬 WhatsApp
+  </a>
 
-    <a class="button" href="https://www.instagram.com/mohamed8.8hazem?stkn=MXM0N3k1N29uaXE2cQ==" target="_blank">
-      📷 Instagram
-    </a>
+  <a class="button" href="https://www.facebook.com/share/1DNmQNRXWQ/" target="_blank">
+    📘 Facebook
+  </a>
 
-    <div
+  <a class="button" href="https://www.instagram.com/mohamed8.8hazem?stkn=MXM0N3k1N29uaXE2cQ==" target="_blank">
+    📷 Instagram
+  </a>
+
+  <div class="phone">
+    01146007168
+  </div>
+
+  <div class="footer">
+    Mohamed Hazem © 2026
+  </div>
+
+</div>
+
+</body>
+</html>
