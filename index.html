@@ -10,161 +10,275 @@
 * {
   box-sizing: border-box;
 }
+
+html {
+  background: #05070a;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
   font-family: Arial, Tahoma, sans-serif;
+  color: #fff;
 
   background:
-    radial-gradient(circle at 20% 15%, rgba(255,255,255,0.12), transparent 28%),
-    radial-gradient(circle at 85% 80%, rgba(120,120,120,0.10), transparent 30%),
-    radial-gradient(circle at 50% 50%, #242424 0%, #101010 48%, #050505 100%);
+    radial-gradient(circle at 80% 15%, rgba(180,150,80,.10), transparent 25%),
+    radial-gradient(circle at 15% 75%, rgba(40,60,90,.12), transparent 30%),
+    linear-gradient(145deg, #05070a 0%, #0c1117 45%, #05070a 100%);
 
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 25px 15px;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
+
+/* خطوط ديكورية في الخلفية */
 body::before {
   content: "";
   position: fixed;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.035);
-  filter: blur(80px);
-  top: -150px;
-  right: -120px;
+  width: 500px;
+  height: 180px;
+  top: -70px;
+  left: -170px;
+  background: linear-gradient(
+    135deg,
+    transparent 35%,
+    rgba(255,255,255,.035) 36%,
+    rgba(255,255,255,.035) 55%,
+    transparent 56%
+  );
+  transform: rotate(-15deg);
   pointer-events: none;
 }
 
 body::after {
   content: "";
   position: fixed;
-  width: 350px;
-  height: 350px;
+  width: 420px;
+  height: 420px;
+  bottom: -250px;
+  right: -180px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.025);
+  background: rgba(190,150,65,.07);
   filter: blur(90px);
-  bottom: -140px;
-  left: -100px;
   pointer-events: none;
 }
+
 .card {
   width: 100%;
   max-width: 430px;
-  padding: 30px 22px;
+  padding: 34px 20px 28px;
   text-align: center;
-  border-radius: 30px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 25px 70px rgba(0,0,0,0.6);
-  backdrop-filter: blur(15px);
+  position: relative;
+  z-index: 2;
 }
 
+/* الصورة */
 .profile {
-  width: 125px;
-  height: 125px;
+  width: 132px;
+  height: 132px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  border: 4px solid rgba(255,255,255,0.85);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+
+  border: 3px solid rgba(255,255,255,.9);
+
+  box-shadow:
+    0 0 0 5px rgba(255,255,255,.035),
+    0 15px 45px rgba(0,0,0,.7);
+
+  margin-bottom: 14px;
 }
 
+/* الاسم */
 h1 {
-  margin: 18px 0 5px;
-  font-size: 30px;
+  margin: 5px 0 10px;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: .3px;
 }
 
+/* الخط الذهبي تحت الاسم */
+.name-line {
+  width: 55px;
+  height: 2px;
+  margin: 0 auto 10px;
+  background: #c9a65b;
+  border-radius: 10px;
+}
+
+/* الوصف */
 .subtitle {
-  color: #aaa;
-  font-size: 15px;
-  margin-bottom: 25px;
+  color: #9da4ad;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
 }
 
+/* كل الأزرار */
 .button {
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
+  min-height: 78px;
+
   text-decoration: none;
-  color: white;
-  padding: 16px;
-  margin: 12px 0;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.13);
-  font-size: 17px;
-  font-weight: bold;
-  transition: 0.2s;
+  color: #fff;
+
+  padding: 13px 18px;
+  margin: 13px 0;
+
+  border-radius: 20px;
+
+  background: rgba(18,24,32,.86);
+  border: 1px solid rgba(125,140,160,.22);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.025);
+
+  transition: all .25s ease;
+  overflow: hidden;
 }
 
 .button:hover {
-  background: rgba(255,255,255,0.18);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  border-color: rgba(201,166,91,.45);
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.4),
+    0 0 20px rgba(201,166,91,.06);
 }
 
-.save {
-  background: rgba(255,255,255,0.18);
+.button:active {
+  transform: scale(.98);
 }
 
-.phone {
-  margin-top: 22px;
-  color: #aaa;
+/* أيقونة */
+.icon {
+  width: 49px;
+  height: 49px;
+  min-width: 49px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 25px;
+  margin-left: 15px;
+
+  background: rgba(255,255,255,.07);
+}
+
+/* النص */
+.button-text {
+  text-align: right;
+  flex: 1;
+}
+
+.button-title {
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.button-subtitle {
+  display: block;
+  font-size: 13px;
+  color: #8f98a4;
+  font-weight: normal;
+}
+
+/* السهم */
+.arrow {
+  font-size: 25px;
+  color: #aeb5bd;
   direction: ltr;
-  font-size: 15px;
+  margin-right: 8px;
 }
 
+/* InstaPay */
+.instapay {
+  min-height: 92px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #3020d5 0%,
+      #5a20c8 38%,
+      #b83c86 68%,
+      #ff7147 100%
+    );
+
+  border: none;
+
+  box-shadow:
+    0 15px 40px rgba(73,35,190,.30);
+}
+
+.instapay:hover {
+  border: none;
+  box-shadow:
+    0 18px 45px rgba(103,40,210,.42);
+}
+
+.instapay .icon {
+  background: rgba(255,255,255,.15);
+  font-size: 24px;
+}
+
+.instapay .button-subtitle {
+  color: rgba(255,255,255,.85);
+}
+
+.instapay .arrow {
+  color: #fff;
+}
+
+/* ألوان الأيقونات */
+.whatsapp .icon {
+  background: rgba(37,211,102,.15);
+}
+
+.facebook .icon {
+  background: rgba(24,119,242,.15);
+}
+
+.instagram .icon {
+  background: rgba(225,48,108,.15);
+}
+
+.phone-button .icon {
+  background: rgba(201,166,91,.12);
+}
+
+/* رقم التليفون */
+.phone {
+  margin-top: 25px;
+  color: #8e969f;
+  direction: ltr;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* الفوتر */
 .footer {
-  margin-top: 22px;
-  color: #666;
-  font-size: 12px;
+  margin-top: 30px;
+  color: #626a74;
+  font-size: 11px;
+  letter-spacing: 2px;
 }
-</style>
-</head>
 
-<body>
+.footer-line {
+  width: 90px;
+  height: 1px;
+  background: rgba(255,255,255,.18);
+  margin: 0 auto 12px;
+}
 
-<div class="card">
-
-  <img src="profile.jpg" class="profile" alt="Mohamed Hazem">
-
-  <h1>Mohamed Hazem</h1>
-
-  <div class="subtitle">
-    Digital Contact Card
-  </div>
-  
-<a class="button save" href="https://ipn.eg/S/mohamed.hussien5614/instapay/3uxVGW">
-  💳 InstaPay
-
-  <a class="button" href="tel:+201146007168">
-    📞 اتصال
-  </a>
-
-  <a class="button" href="https://wa.me/201146007168" target="_blank">
-    💬 WhatsApp
-  </a>
-
-  <a class="button" href="https://www.facebook.com/share/1DNmQNRXWQ/" target="_blank">
-    📘 Facebook
-  </a>
-
-  <a class="button" href="https://www.instagram.com/mohamed8.8hazem?stkn=MXM0N3k1N29uaXE2cQ==" target="_blank">
-    📷 Instagram
-  </a>
-
-  <div class="phone">
-    01146007168
-  </div>
-
-  <div class="footer">
-    Mohamed Hazem © 2026
-  </div>
-
-</div>
-
-</body>
-</html>
+/
